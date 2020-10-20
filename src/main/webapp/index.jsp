@@ -11,8 +11,10 @@
     <body>
         ========这是首页！========
         <br />
+        <br />
 
-==0==
+
+<table border="1">
         <c:forEach items="${users}" var="u">
             <tr>
                 <td>${u.user_id}</td>
@@ -20,15 +22,6 @@
                 <td>${u.password}</td>
             </tr>
         </c:forEach>
-
-==1==
-        <s:iterator value="users">
-            <tr>
-                <td>${user_id}</td>
-                <td>${userName}</td>
-                <td>${password}</td>
-            </tr>
-        </s:iterator>
-==2==
+</table>
     </body>
 </html>

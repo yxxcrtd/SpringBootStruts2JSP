@@ -14,7 +14,7 @@ spring:
                 format_sql: true
     logging:
         level: debug
-        path: ${user.home}/Desktop/logs.txt
+        path: /Users/young/Desktop/logs.txt
 
     mvc:
         view:
