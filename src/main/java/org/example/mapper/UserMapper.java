@@ -8,4 +8,8 @@ public interface UserMapper {
 
     List<User> findAll();
 
+    User findById(int id);
+
+    User updateById(User user);
+
 }

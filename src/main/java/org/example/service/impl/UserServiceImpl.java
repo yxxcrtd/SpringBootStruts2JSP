@@ -15,9 +15,20 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserMapper userMapper;
 
+	@Override
 	public List<User> findALL(int pageNum, int pageSize) {
 		PageHelper.startPage(pageNum, pageSize);
 		return userMapper.findAll();
+	}
+
+	@Override
+	public User findById(int id) {
+		return userMapper.findById(id);
+	}
+
+	@Override
+	public User updateById(User user) {
+		return userMapper.updateById(user);
 	}
 
 }

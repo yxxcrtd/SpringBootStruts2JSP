@@ -8,4 +8,8 @@ public interface UserService {
 
 	List<User> findALL(int pageNum, int pageSize);
 
+	User findById(int id);
+
+	User updateById(User user);
+
 }
