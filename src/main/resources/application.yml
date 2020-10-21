@@ -7,23 +7,25 @@ spring:
     application:
         name: HBKF
 
-    jpa:
-        properties:
-            hibernate:
-                show_sql: true
-                format_sql: true
-    logging:
-        level: debug
-        path: /Users/young/Desktop/logs.txt
-
     mvc:
         view:
             prefix: /
             suffix: .jsp
 
     datasource:
-        type: com.alibaba.druid.pool.DruidDataSource
-        driverClassName: com.mysql.jdbc.Driver
-        url: jdbc:mysql://192.168.70.204:3306/tams?characterEncoding=utf8&useSSL=true
-        username: tams
-        password: tams
+        driver-class-name: org.postgresql.Driver
+        url: jdbc:postgresql://localhost:15432/postgres
+        username: young
+        password: 123456
+
+
+# 默认日志文件达到10MB会自动切分一次，产生新的日志文件（启动时候设置日志输出级别：java -jar my-app.jar --debug ）
+logging:
+    level:
+        org.example.mapper: debug # org.example.mapper 是 mybatis 对应的方法接口所在的包，并不是mapper.xml所在的包
+    pattern:
+        file: '%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n'
+        console: '%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n'
+    file: /Users/young/Desktop/test.log
+
+

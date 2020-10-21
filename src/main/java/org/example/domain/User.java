@@ -1,48 +1,37 @@
 package org.example.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import java.io.Serializable;
 
-@Entity
-@Table(name = "sys_user")
 public class User implements Serializable {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String user_id;
+	private String id;
 
-	@Column
-	private String userName;
+	private String name;
 
-	@Column
-	private String password;
+	private String sequence;
 
-	public String getUser_id() {
-		return user_id;
+	public String getId() {
+		return id;
 	}
 
-	public void setUser_id(String user_id) {
-		this.user_id = user_id;
+	public void setId(String id) {
+		this.id = id;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getName() {
+		return name;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getSequence() {
+		return sequence;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setSequence(String sequence) {
+		this.sequence = sequence;
 	}
+
 }

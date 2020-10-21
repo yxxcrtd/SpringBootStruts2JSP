@@ -1,22 +1,23 @@
 package org.example.service.impl;
 
+import com.github.pagehelper.PageHelper;
 import org.example.domain.User;
-import org.example.repository.UserRepository;
+import org.example.mapper.UserMapper;
 import org.example.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
-@Service
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
-	@Resource
-	private UserRepository userRepository;
+	@Autowired
+	private UserMapper userMapper;
 
-	@Override
-	public List<User> findALL() {
-		return userRepository.findAll();
+	public List<User> findALL(int pageNum, int pageSize) {
+		PageHelper.startPage(pageNum, pageSize);
+		return userMapper.findAll();
 	}
 
 }

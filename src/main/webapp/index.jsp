@@ -17,9 +17,9 @@
 <table border="1">
         <c:forEach items="${users}" var="u">
             <tr>
-                <td>${u.user_id}</td>
-                <td>${u.userName}</td>
-                <td>${u.password}</td>
+                <td>${u.id}</td>
+                <td>${u.name}</td>
+                <td>${u.sequence}</td>
             </tr>
         </c:forEach>
 </table>
